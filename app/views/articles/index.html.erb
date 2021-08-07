@@ -1,0 +1,36 @@
+<h1>Articles Table</h1>
+
+<!-- Article Table -->
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Creation Date</th>
+            <th>Last Edition</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @articles.each do |article| %>
+            <tr>
+                <td>
+                    <%= article.id %>
+                </td>
+
+                <td>
+                    <%= link_to article.title, article %>
+                </td>
+
+                <td>
+                    <%= article.created_at %>
+                </td>
+                <td>
+                    <%= article.updated_at %>
+                </td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
+
+
+<%= link_to 'Post New Article', new_article_path, class:"btn btn-secondary" %>

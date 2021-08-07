@@ -1,0 +1,17 @@
+
+<ul>
+  <li>
+    <strong>From:</strong>
+    <%= comment.commenter %>
+  </li>
+  <li>
+    <strong>Body:</strong>
+    <%= comment.body %>
+  </li>
+</ul>
+
+<p>
+  <%= link_to 'Destroy Comment', comment.article,
+              method: :delete,
+              data: { confirm: "Are you sure?" } , class:"btn btn-danger" %>
+</p>
